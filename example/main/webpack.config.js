@@ -12,6 +12,7 @@ module.exports = {
     compress: true,
     headers: {
       'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': '*',
     },
     historyApiFallback: true,
     overlay: { warnings: false, errors: true },
@@ -19,9 +20,9 @@ module.exports = {
       '/apis': {
         target: "https://fake.dns.qihoo.net",
         changeOrigin: true,
-        pathRewrite: {
-          '/apis': '',
-        },
+        // pathRewrite: {
+        //   '/apis': '',
+        // },
         secure: false,
         headers: {
           Referer: "https://fake.dns.qihoo.net",
