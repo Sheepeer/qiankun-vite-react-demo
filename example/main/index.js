@@ -50,6 +50,21 @@ registerMicroApps(
       loader,
       activeRule: '/v3sub',
     },
+    {
+      name: 'dns-saas-web',
+      entry: 'http://test.fake.dns.qihoo.net:3000',  // develop
+      // entry: 'http://test.fake.dns.qihoo.net:4173',  // build
+      container: '#subapp-viewport',
+      loader,
+      activeRule: '/dns-saas-web'
+    },
+    {
+      name: 'vite-project',
+      entry: 'http://127.0.0.1:5173',
+      container: '#subapp-viewport',
+      loader,
+      activeRule: '/vite-project'
+    }
   ],
   {
     beforeLoad: [

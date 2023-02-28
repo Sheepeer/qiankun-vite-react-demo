@@ -15,6 +15,19 @@ module.exports = {
     },
     historyApiFallback: true,
     overlay: { warnings: false, errors: true },
+    proxy: {
+      '/apis': {
+        target: "https://fake.dns.qihoo.net",
+        changeOrigin: true,
+        pathRewrite: {
+          '/apis': '',
+        },
+        secure: false,
+        headers: {
+          Referer: "https://fake.dns.qihoo.net",
+        },
+      }
+    }
   },
   output: {
     publicPath: '/',
