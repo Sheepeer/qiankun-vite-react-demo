@@ -5,7 +5,6 @@ import './index.css'
 import { renderWithQiankun, qiankunWindow } from "../../../es/helper";
 
 let root: Root;
-console.log(React);
 
 function render(props: any) {
   const { container } = props;

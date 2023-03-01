@@ -56,7 +56,7 @@ registerMicroApps(
       // entry: 'http://test.fake.dns.qihoo.net:4173',  // build
       container: '#subapp-viewport',
       loader,
-      activeRule: '/dns-saas-web'
+      activeRule: '/dns'
     },
     {
       name: 'vite-project',
