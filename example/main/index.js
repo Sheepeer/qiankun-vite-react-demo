@@ -52,8 +52,8 @@ registerMicroApps(
     },
     {
       name: 'dns-saas-web',
-      entry: 'http://test.fake.dns.qihoo.net:3000',  // develop
-      // entry: 'http://test.fake.dns.qihoo.net:4173',  // build
+      entry: 'https://test.fake.dns.qihoo.net:3000',  // develop
+      // entry: 'https://test.fake.dns.qihoo.net:4173',  // build
       container: '#subapp-viewport',
       loader,
       activeRule: '/dns'

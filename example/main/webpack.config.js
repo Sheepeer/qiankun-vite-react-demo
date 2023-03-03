@@ -1,34 +1,43 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { name } = require('./package');
+const {
+  name
+} = require('./package');
+const fs = require('fs')
 
 module.exports = {
   entry: './index.js',
   devtool: 'source-map',
   devServer: {
+    https: true,
+    key: fs.readFileSync('./localhost-key.pem'),
+    cert: fs.readFileSync('./localhost.pem'),
     open: true,
     port: '7099',
     clientLogLevel: 'warning',
+    hotOnly: false,
     disableHostCheck: true,
     compress: true,
     headers: {
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': '*',
     },
     historyApiFallback: true,
-    overlay: { warnings: false, errors: true },
+    overlay: {
+      warnings: false,
+      errors: true
+    },
     proxy: {
-      '/apis': {
+      '/dns/apis': {
         target: "https://fake.dns.qihoo.net",
         changeOrigin: true,
-        // pathRewrite: {
-        //   '/apis': '',
-        // },
+        pathRewrite: {
+          '^/dns': '',
+        },
         secure: false,
         headers: {
           Referer: "https://fake.dns.qihoo.net",
         },
       }
-    }
+    },
   },
   output: {
     publicPath: '/',
@@ -38,8 +47,7 @@ module.exports = {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
