@@ -12,13 +12,20 @@ function Render(props) {
   
   useEffect(() => {
     setTimeout(() => {
+      // const app = loadMicroApp({
+      //   name: 'viteapp',
+      //   entry: 'http://127.0.0.1:7106',
+      //   container: containerRef.current,
+      //   props: { brand: 'qiankun' },
+      // });
+  
       const app = loadMicroApp({
-        name: 'viteapp',
-        entry: 'http://127.0.0.1:7106',
+        name: 'dns-saas-web',
+        entry: 'https://test.fake.dns.qihoo.net:3000',
         container: containerRef.current,
         props: { brand: 'qiankun' },
       });
-  
+
       setTimeout(() => {
         app.update({testprops: 123})
       }, 3000)

@@ -25,19 +25,19 @@ module.exports = {
       warnings: false,
       errors: true
     },
-    proxy: {
-      '/dns/apis': {
-        target: "https://fake.dns.qihoo.net",
-        changeOrigin: true,
-        pathRewrite: {
-          '^/dns': '',
-        },
-        secure: false,
-        headers: {
-          Referer: "https://fake.dns.qihoo.net",
-        },
-      }
-    },
+    // proxy: {
+    //   '/dns/apis': {
+    //     target: "https://fake.dns.qihoo.net",
+    //     changeOrigin: true,
+    //     pathRewrite: {
+    //       '^/dns': '',
+    //     },
+    //     secure: false,
+    //     headers: {
+    //       Referer: "https://fake.dns.qihoo.net",
+    //     },
+    //   }
+    // },
   },
   output: {
     publicPath: '/',

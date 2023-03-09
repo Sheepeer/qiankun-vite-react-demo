@@ -23,48 +23,20 @@ const loader = loading => render({ loading });
 registerMicroApps(
   [
     {
-      name: 'viteapp',
-      entry: 'http://127.0.0.1:7106',
-      container: '#subapp-viewport',
-      loader,
-      activeRule: '/viteapp',
-    },
-    {
-      name: 'vue3',
-      entry: 'http://127.0.0.1:7105',
-      container: '#subapp-viewport',
-      loader,
-      activeRule: '/vue3',
-    },
-    {
-      name: 'reac18',
-      entry: 'http://127.0.0.1:7107',
-      container: '#subapp-viewport',
-      loader,
-      activeRule: '/react18',
-    },
-    {
-      name: 'vue3sub',
-      entry: 'http://127.0.0.1:7108',
-      container: '#subapp-viewport',
-      loader,
-      activeRule: '/v3sub',
-    },
-    {
       name: 'dns-saas-web',
-      entry: 'https://test.fake.dns.qihoo.net:3000',  // develop
-      // entry: 'https://test.fake.dns.qihoo.net:4173',  // build
+      // entry: 'https://test.fake.dns.qihoo.net:3000',  // develop
+      entry: 'https://test.fake.dns.qihoo.net:4173',  // build
       container: '#subapp-viewport',
       loader,
       activeRule: '/dns'
     },
-    {
-      name: 'vite-project',
-      entry: 'http://127.0.0.1:5173',
-      container: '#subapp-viewport',
-      loader,
-      activeRule: '/vite-project'
-    }
+    // {
+    //   name: 'vite-project',
+    //   entry: 'http://127.0.0.1:5173',
+    //   container: '#subapp-viewport',
+    //   loader,
+    //   activeRule: '/vite-project'
+    // }
   ],
   {
     beforeLoad: [
@@ -101,7 +73,8 @@ setGlobalState({
 /**
  * Step3 设置默认进入的子应用
  */
-setDefaultMountApp('/vue3');
+// setDefaultMountApp('/vue3');
+// setDefaultMountApp('/dns')
 
 /**
  * Step4 启动应用
